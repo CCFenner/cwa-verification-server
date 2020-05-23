@@ -4,7 +4,7 @@ ARG WORK_DIR=/build
 
 COPY . ${WORK_DIR}/
 WORKDIR ${WORK_DIR}
-
+ 
 RUN mkdir -p /root/.m2 /usr/tsi/verification-server
 RUN cd ${WORK_DIR}
 RUN mvn -B ${MAVEN_ARGS} install
