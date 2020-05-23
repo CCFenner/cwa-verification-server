@@ -2,8 +2,8 @@ name: "Dockerfile-Linting"
 
 on:
   pull_request:
-    branches: 
-    - master
+#    branches: 
+#    - master
 #    paths:
 #    - '**/Dockerfile'
 
