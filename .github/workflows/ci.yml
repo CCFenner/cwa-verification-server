@@ -24,10 +24,10 @@ jobs:
       with:
         java-version: 11
     - run: |
-        mvn --batch-mode package sonar:sonar 
+        mvn --batch-mode package sonar:sonar -Dsonar.login=$SONAR_TOKEN -Dsonar.organization=ccfenner -Dsonar.projectKey=CCFenner_cwa-verification-server
       env:
-        MAVEN_ARGS: -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.organization=ccfenner -Dsonar.projectKey=CCFenner_cwa-verification-server
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: https://sonarcloud.io
     - uses: actions/upload-artifact@v1
       with:
