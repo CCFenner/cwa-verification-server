@@ -24,6 +24,7 @@ jobs:
       with:
         java-version: 11
     - run: mvn --batch-mode package
+    - run: rm target/cwa-verification-server-*.jar
     - uses: actions/upload-artifact@v1
       with:
         name: target
